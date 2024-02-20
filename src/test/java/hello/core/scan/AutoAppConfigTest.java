@@ -11,10 +11,11 @@ import static org.assertj.core.api.Assertions.*;
 
 public class AutoAppConfigTest {
 
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
     @Test
     void baiscScan() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+
         MemberService memberService = ac.getBean(MemberService.class);
         assertThat(memberService).isInstanceOf(MemberService.class);
 
